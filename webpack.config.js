@@ -5,6 +5,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
+    crossOriginLoading: 'anonymous'
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
@@ -24,3 +25,8 @@ module.exports = {
     port: 9000,
   },
 };
+new HtmlWebpackPlugin({
+  template: 'index.html',
+  scriptLoading: 'defer',
+  crossorigin: 'anonymous'
+});   
